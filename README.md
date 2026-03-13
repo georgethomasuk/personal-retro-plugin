@@ -4,38 +4,39 @@ A Claude Code plugin that runs a personal retrospective. It extracts your Claude
 
 ## Install
 
-Add to your Claude Code settings (`~/.claude/settings.json`):
+### From the marketplace
 
-```json
-{
-  "plugins": [
-    "github:georgethomasuk/personal-retro-plugin"
-  ]
-}
+If the marketplace is configured:
+
+```
+/plugin install personal-retro@georgethomas-marketplace
 ```
 
-Or for local development:
+### From GitHub directly
 
-```json
-{
-  "plugins": [
-    "/path/to/personal-retro-plugin"
-  ]
-}
+```
+/plugin install github:georgethomasuk/personal-retro-plugin
+```
+
+### Local development
+
+```bash
+claude --plugin-dir /path/to/personal-retro-plugin
 ```
 
 ## Usage
 
 ```
-/personal-retro        # Retro on the last 7 days
-/personal-retro 14     # Retro on the last 14 days
+/personal-retro:personal-retro        # Retro on the last 7 days
+/personal-retro:personal-retro 14     # Retro on the last 14 days
 ```
 
 The plugin will:
 
 1. Extract your prompts from `~/.claude/projects/` for the specified period
-2. Analyse themes, decisions, friction points, and patterns
-3. Generate retro notes at `./personal-retro-notes/YYYY/retro-notes-YYYY-WNN.md`
+2. Present initial observations and ask probing questions
+3. Have a back-and-forth coaching conversation with you
+4. Write retro notes only when you're ready
 
 ## Standalone script
 
@@ -43,16 +44,16 @@ The extraction script can also be used independently:
 
 ```bash
 # JSON output to stdout
-python3 scripts/extract_sessions.py --days 7
+python3 skills/personal-retro/extract_sessions.py --days 7
 
 # Markdown output to stdout
-python3 scripts/extract_sessions.py --days 7 --format markdown
+python3 skills/personal-retro/extract_sessions.py --days 7 --format markdown
 
 # Write to a specific file
-python3 scripts/extract_sessions.py --days 14 --format markdown --output notes.md
+python3 skills/personal-retro/extract_sessions.py --days 14 --format markdown --output notes.md
 
 # Auto-named output in a directory
-python3 scripts/extract_sessions.py --days 7 --format markdown --output-dir ./personal-retro-notes
+python3 skills/personal-retro/extract_sessions.py --days 7 --format markdown --output-dir ./personal-retro-notes
 ```
 
 ## What the coach does
@@ -64,6 +65,8 @@ The retro coach is not a summariser. It's a curious, supportive, but challenging
 - Gently challenges areas where you seem stuck
 - Reflects back themes with specific evidence from your sessions
 - Identifies what you might be avoiding
+
+The coach presents observations first, then has a conversation with you before writing anything. The discussion is the point — the notes capture what you arrived at together.
 
 ## Output structure
 

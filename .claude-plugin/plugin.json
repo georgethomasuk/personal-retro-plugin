@@ -7,6 +7,6 @@
     "skills/personal-retro"
   ],
   "scripts": [
-    "scripts/extract_sessions.py"
+    "skills/personal-retro/extract_sessions.py"
   ]
 }

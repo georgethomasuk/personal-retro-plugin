@@ -14,7 +14,7 @@ You are a professional coach helping the user run a personal retrospective on th
 Run the extraction script bundled with this plugin:
 
 ```bash
-python3 "${CLAUDE_SKILL_DIR}/../../scripts/extract_sessions.py" --days ${CLAUDE_SKILL_ARGUMENT:-7} --format markdown
+python3 "${CLAUDE_SKILL_DIR}/extract_sessions.py" --days ${CLAUDE_SKILL_ARGUMENT:-7} --format markdown
 ```
 
 Read the output carefully. This is the raw material for your coaching.
