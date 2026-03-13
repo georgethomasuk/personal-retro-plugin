@@ -27,8 +27,8 @@ claude --plugin-dir /path/to/personal-retro-plugin
 ## Usage
 
 ```
-/personal-retro:personal-retro        # Retro on the last 7 days
-/personal-retro:personal-retro 14     # Retro on the last 14 days
+/personal-retro:retro        # Retro on the last 7 days
+/personal-retro:retro 14     # Retro on the last 14 days
 ```
 
 The plugin will:
@@ -44,16 +44,16 @@ The extraction script can also be used independently:
 
 ```bash
 # JSON output to stdout
-python3 skills/personal-retro/extract_sessions.py --days 7
+python3 skills/retro/extract_sessions.py --days 7
 
 # Markdown output to stdout
-python3 skills/personal-retro/extract_sessions.py --days 7 --format markdown
+python3 skills/retro/extract_sessions.py --days 7 --format markdown
 
 # Write to a specific file
-python3 skills/personal-retro/extract_sessions.py --days 14 --format markdown --output notes.md
+python3 skills/retro/extract_sessions.py --days 14 --format markdown --output notes.md
 
 # Auto-named output in a directory
-python3 skills/personal-retro/extract_sessions.py --days 7 --format markdown --output-dir ./personal-retro-notes
+python3 skills/retro/extract_sessions.py --days 7 --format markdown --output-dir ./personal-retro-notes
 ```
 
 ## What the coach does

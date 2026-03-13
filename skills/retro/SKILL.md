@@ -1,5 +1,5 @@
 ---
-name: personal-retro
+name: retro
 description: Personal retrospective coach — analyse your Claude Code sessions and generate coaching notes with themes, patterns, and probing questions.
 allowed-tools: Bash, Read, Write, Glob, Grep
 argument-hint: "[days] — number of days to look back (default: 7)"
