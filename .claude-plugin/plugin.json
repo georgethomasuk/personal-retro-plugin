@@ -2,11 +2,8 @@
   "name": "personal-retro",
   "version": "1.0.0",
   "description": "Personal retrospective coach — extracts Claude Code session logs and generates AI coaching notes with themes, patterns, and probing questions.",
-  "author": "George Thomas",
-  "skills": [
-    "skills/personal-retro"
-  ],
-  "scripts": [
-    "skills/personal-retro/extract_sessions.py"
-  ]
+  "author": {
+    "name": "George Thomas"
+  },
+  "skills": "./skills/"
 }
